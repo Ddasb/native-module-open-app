@@ -1,10 +1,9 @@
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/kiuseii)
-
-
 # native-module-open-app
 
 Open other apps with React Native on android devices.
 Update of react-native-open-application package.
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/kiuseii)
 
 ## Installation
 
