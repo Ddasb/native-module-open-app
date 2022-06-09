@@ -1,26 +1,27 @@
 # native-module-open-app
 
-Open other apps with React Native
+Open other apps with React Native on android devices.
+Update of react-native-open-application package.
 
 ## Installation
 
 ```sh
-npm install native-module-open-app
+npm i native-module-open-app
 ```
 
 ## Usage
 
 ```js
-import { multiply } from "native-module-open-app";
+import { openApplication } from "native-module-open-app";
 
 // ...
 
-const result = await multiply(3, 7);
+await openApplication("com.example.myapp");
 ```
 
-## Contributing
+## Issue
 
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+If you have any issue, please create an issue on [GitHub](https://github.com/Ddasb/native-module-open-app/issues).
 
 ## License
 

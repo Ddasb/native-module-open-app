@@ -1,6 +1,7 @@
 package com.nativemoduleopenapp;
 
 import androidx.annotation.NonNull;
+import android.content.pm.PackageManager;
 
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -11,9 +12,11 @@ import com.facebook.react.module.annotations.ReactModule;
 @ReactModule(name = NativeModuleOpenAppModule.NAME)
 public class NativeModuleOpenAppModule extends ReactContextBaseJavaModule {
     public static final String NAME = "NativeModuleOpenApp";
+    private final ReactApplicationContext reactContext;
 
     public NativeModuleOpenAppModule(ReactApplicationContext reactContext) {
         super(reactContext);
+        this.reactContext = reactContext;
     }
 
     @Override
@@ -22,13 +25,13 @@ public class NativeModuleOpenAppModule extends ReactContextBaseJavaModule {
         return NAME;
     }
 
-
-    // Example method
-    // See https://reactnative.dev/docs/native-modules-android
     @ReactMethod
-    public void multiply(int a, int b, Promise promise) {
-        promise.resolve(a * b);
+    private void openApplication(String packageName, Promise promise) {
+        PackageManager pm = this.reactContext.getPackageManager();
+        try {
+            this.reactContext.startActivity(pm.getLaunchIntentForPackage(packageName));
+        } catch (Exception e) {
+            promise.reject(e);
+        }
     }
-
-    public static native int nativeMultiply(int a, int b);
 }
