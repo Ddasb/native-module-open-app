@@ -2,7 +2,7 @@
   "name": "native-module-open-app",
   "version": "1.0.0",
   "description": "Open other apps with React Native",
-  "main": "index.ts",
+  "main": "index.tsx",
   "scripts": {},
   "keywords": [
     "react-native",
